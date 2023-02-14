@@ -1,19 +1,17 @@
 ﻿// Задайте значения M и N. Напишите программу, 
 // которая найдёт сумму натуральных элементов в промежутке от M до N.
 
-
 Console.Write("Введите число M: ");
-int M = int.Parse(Console.ReadLine());
+int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число N: ");
-int N = int.Parse(Console.ReadLine());
-Console.WriteLine($"Сумма натуральных числе от M до N равна {SumNumbers(M, N)}");
-Console.ReadLine();
- 
-static int SumNumbers(int M, int N)
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Сумма натуральных числе от M до N равна {SumNumbers(m, n)}");
+int SumNumbers(int m, int n)
 {
-    if (M == 0) return (N * (N + 1)) / 2;
-    else if (N == 0) return (M * (M + 1)) / 2;
-    else if (M == N) return M;
-    else if (M < N) return N + SumNumbers(M, N - 1);
-    else return N + SumNumbers(M, N + 1);
+    if (m == 0) return (n * (n + 1)) / 2;
+    else if (n == 0) return (m * (m + 1)) / 2;
+    else if (m == n) return m;
+    else if (m < n) return n + SumNumbers(m, n - 1);
+    else return n + SumNumbers(m, n + 1);
 }
+Console.ReadLine();
